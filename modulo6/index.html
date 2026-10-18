@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗄️ M6 · Bases de datos y SQL</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🗄️ M6 · Bases de datos y SQL</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo sabiendo <b>guardar datos estructurados</b>, relacionarlos entre sí y responder preguntas de tu cliente con consultas, no a mano.</p>
+<p>Hasta aquí tu información vivía en variables y en el <code>localStorage</code> del navegador. Eso sirve para una maqueta; se cae cuando el cliente tiene 300 registros o cuando dos personas usan el sistema a la vez. <b>Los datos de verdad van en una base de datos</b>, y la base de datos no se llena haciendo <code>localStorage.setItem</code>: se llena con SQL.</p>
+<p>La parte que más cuesta no es escribir el <code>SELECT</code>: es decidir qué va en la base y qué no. Un archivo PDF del comprobante de pago no es un dato: es un archivo. Meterlo todo a la base produce una tabla inútil.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Modelo relacional</b>: los datos viven en tablas, y cada tabla es de un solo tema.</li>
+<li><b>Clave primaria (PK)</b>: la columna que identifica cada fila de forma única. Nunca se repite.</li>
+<li><b>Clave foránea (FK)</b>: una columna que apunta a la clave primaria de otra tabla. Eso es lo que "relaciona".</li>
+<li><b>Las cuatro operaciones</b>: <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>.</li>
+<li><b>JOIN</b>: unir tablas para traer información que está repartida.</li>
+<li><b>Normalización hasta 3FN</b>: quitar la duplicación, hasta donde tenga sentido.</li>
+<li><b>Índices</b>: la estructura que hace que una consulta no revise toda la tabla.</li>
+</ul>
+
+<pre><code>SELECT c.nombre, COUNT(*) AS ordenes
+FROM clientes c
+JOIN ordenes o ON o.cliente_id = c.id
+GROUP BY c.nombre;</code></pre>
+
+<table>
+<tr><th>Error común</th><th>Por qué duele</th></tr>
+<tr><td>Guardar la dirección en cada pedido</td><td>Si el cliente se muda, hay que actualizar 50 filas y alguna se queda</td></tr>
+<tr><td>Una tabla de "todo"</td><td>Nadie sabe qué columnas son de qué tema; las consultas se rompen</td></tr>
+<tr><td>No poner clave primaria</td><td>No hay forma de decir "este cliente" sin ambigüedad</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>database</td><td>Base de datos</td></tr>
+<tr><td>table / row / column</td><td>Tabla / fila / columna</td></tr>
+<tr><td>primary key</td><td>Clave primaria: identificador único de la fila</td></tr>
+<tr><td>foreign key</td><td>Clave foránea: referencia a la clave primaria de otra tabla</td></tr>
+<tr><td>query</td><td>Consulta: la pregunta que le haces a la base de datos</td></tr>
+<tr><td>join</td><td>Unión entre tablas</td></tr>
+<tr><td>schema</td><td>Esquema: la estructura de la base (tablas y columnas)</td></tr>
+<tr><td>index</td><td>Índice: acelerador de consultas, con costo de escritura</td></tr>
+<tr><td>migration</td><td>Migración: cambio controlado en la estructura de la base</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://sqlbolt.com" target="_blank" rel="noopener">SQLBolt</a> — tutorial interactivo de SQL en el navegador, con base de datos de práctica incluida.</li>
+<li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener">W3Schools · SQL</a> — referencia rápida con ejemplos ejecutables para cada sentencia.</li>
+<li><a href="https://www.postgresql.org/docs/current/tutorial-sql.html" target="_blank" rel="noopener">Documentación oficial de PostgreSQL · Tutorial de SQL</a> — el tutorial completo, en inglés.</li>
+<li><a href="https://www.dbdiagram.io" target="_blank" rel="noopener">dbdiagram.io</a> — dibujar el modelo de la base en el navegador y exportar el código SQL.</li>
+<li><a href="https://sqlite.org/cli.html" target="_blank" rel="noopener">SQLite · command line</a> — si no quieres instalar nada, SQLite viene con su propio cliente y no necesita servidor.</li>
+</ul>
+
+<div class="nota">
+<h3>SQL se lee casi como español</h3>
+<p>Por eso es el lenguaje más fácil de aprender de los que se usan en software. <code>SELECT nombre FROM clientes WHERE ciudad = 'Lorica'</code> se lee "selecciona el nombre de los clientes cuya ciudad es Lorica". Escribir la consulta en una sola línea, sin mayúsculas, ayuda más que cualquier truco.</p>
+<p>Y una advertencia: el <code>DELETE</code> sin <code>WHERE</code> borra la tabla entera. Siempre, antes de ejecutar un <code>UPDATE</code> o un <code>DELETE</code> en datos de alguien más, escribe primero el <code>SELECT</code> equivalente y mira qué filas devuelve.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Los datos de tu cliente están en una <b>base de datos real</b>, no en variables ni en <code>localStorage</code>.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tu modelo tiene al menos dos tablas relacionadas y la relación está definida con claves.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Escribes a mano consultas que responden tres preguntas reales del cliente, y la respuesta sale de la base.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Sabes explicar por qué una columna es clave foránea, con un ejemplo de tu propio modelo.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes por escrito qué decidiste <b>no</b> meter en la base, y por qué.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el esquema de tu base, un archivo con las consultas que usaste para responderle al cliente, y la lista de decisiones sobre lo que quedó fuera.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo7/index.html">🔷 Siguiente: programación a objetos →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m6'); bindChecklist('m6'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m6'));</script>
+</body></html>

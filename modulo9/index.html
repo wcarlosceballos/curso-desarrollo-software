@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚙️ M9 · Backend y API</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>⚙️ M9 · Backend y API</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo con un sistema que funciona <b>de extremo a extremo</b>: alguien hace clic en tu pantalla, la información viaja a un servidor, se guarda en la base de datos y vuelve. Y puedes explicar qué es un endpoint.</p>
+<p>Hasta aquí tu interfaz y tus datos vivían en el mismo lugar: todo pasaba en el navegador de la persona. Eso no sobrevive al mundo real. Si dos personas registran datos al mismo tiempo, una pisa a la otra. Y nadie más puede consultar esa información, porque vive en el <code>localStorage</code> de un computador que no es el tuyo.</p>
+<p>El backend es la parte que no se ve y que hace que todo lo demás sea serio: centraliza las reglas, guarda los datos donde todos los ven y deja expuesta una forma ordenada de consultarlos. Vas a elegir <b>un</b> framework, no tres. El primero que aprendas bien te sirve más que tres a medias.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Un framework backend</b>: Django (Python), Express (JavaScript) o Spring (Java). El que ya conoces, o el que te sea más fácil de instalar.</li>
+<li><b>Rutas</b>: cada <i>endpoint</i> es una dirección que responde a una petición.</li>
+<li><b>Controladores o vistas</b>: el código que recibe la petición, aplica la regla y devuelve la respuesta.</li>
+<li><b>Conexión con la base de datos</b>: lo que hiciste en el M6, ahora desde el servidor.</li>
+<li><b>Autenticación básica</b>: quién entra, y qué puede ver cada quien.</li>
+<li><b>API REST y JSON</b>: la forma en que dos sistemas se hablan sin acoplarse directamente.</li>
+</ul>
+
+<pre><code>GET /api/ordenes          -&gt; lista todas las órdenes
+GET /api/ordenes/42       -&gt; una sola orden
+POST /api/ordenes         -&gt; crea una orden
+DELETE /api/ordenes/42    -&gt; la elimina</code></pre>
+
+<table>
+<tr><th>Método</th><th>Significa</th></tr>
+<tr><td><code>GET</code></td><td>Quiero leer. No cambia nada.</td></tr>
+<tr><td><code>POST</code></td><td>Quiero crear algo nuevo.</td></tr>
+<tr><td><code>PUT</code> / <code>PATCH</code></td><td>Quiero modificar lo que ya existe</td></tr>
+<tr><td><code>DELETE</code></td><td>Quiero eliminarlo</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>backend</td><td>Parte del servidor: reglas y datos</td></tr>
+<tr><td>frontend</td><td>Parte del cliente: lo que la persona ve y toca</td></tr>
+<tr><td>endpoint</td><td>Endpoint: una dirección del servidor que responde a una petición</td></tr>
+<tr><td>route</td><td>Ruta: la regla que asocia una URL con un código</td></tr>
+<tr><td>request / response</td><td>Petición / respuesta</td></tr>
+<tr><td>middleware</td><td>Middleware: código que se ejecuta antes de llegar a la ruta</td></tr>
+<tr><td>authentication</td><td>Autenticación: demostrar quién eres</td></tr>
+<tr><td>authorization</td><td>Autorización: decidir qué puedes hacer</td></tr>
+<tr><td>payload</td><td>Payload: los datos que viajan en la petición</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://roadmaps.sh/backend" target="_blank" rel="noopener">roadmaps.sh · Backend</a> — una ruta visual para no perderte. Ignora el orden: úsalo para ubicarte.</li>
+<li><a href="https://djangogirls.org/" target="_blank" rel="noopener">Django Girls Guide (español)</a> — tutorial de Django completo y gratuito, con ejercicios.</li>
+<li><a href="https://httpbin.org" target="_blank" rel="noopener">httpbin.org</a> — un servicio público para probar peticiones y ver qué devuelve cada método.</li>
+<li><a href="https://docs.djangoproject.com/es/4.2/" target="_blank" rel="noopener">Documentación oficial de Django</a> — <a href="https://docs.python.org/es/3/" target="_blank" rel="noopener">docs.python.org</a> y <a href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noopener">docs de Node.js</a> son las fuentes que no fallan.</li>
+</ul>
+
+<div class="nota">
+<h3>La documentación oficial está en inglés</h3>
+<p>Vas a leer inglés técnico aunque no quieras. No hay forma de evitarlo: la documentación buena está casi siempre en inglés y a veces se demora meses en traducirse. La estrategia que funciona es traducir <b>los términos</b>, no el documento entero. Lee "endpoint", "route", "middleware" como palabras sueltas y síguele el sentido por el contexto. Ese inglés técnico no se aprende de otra forma: se vuelve tuyo después de dos semanas de leerlo todos los días.</p>
+<p>Y una advertencia práctica: <code>python manage.py runserver</code> o <code>npm start</code> levantan el servidor solo en tu computador. En el M10 eso cambia, y el error típico es olvidar configurar el puerto o el <i>host</i> para que acepte conexiones externas.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tu sistema funciona de extremo a extremo: alguien lo usa y el dato queda guardado.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tu interfaz llama al backend y muestra en pantalla lo que el backend responde.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>El backend lee y escribe en la base de datos del M6, no en archivos sueltos.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Puedes explicar qué es un endpoint, y mostrar uno de los tuyos con su método y su respuesta.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Solo quien debe ver la información la ve: ya no es una página pública sin control.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> un video corto de pantalla o la URL local, la lista de tus endpoints con método y qué devuelven, y el código del punto donde la interfaz consume la respuesta.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo10/index.html">🚀 Siguiente: publicar →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m9'); bindChecklist('m9'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m9'));</script>
+</body></html>

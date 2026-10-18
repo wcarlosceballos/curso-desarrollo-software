@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📐 M8 · Requisitos y UML</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>📐 M8 · Requisitos y UML</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo sabiendo <b>convertir lo que pide tu cliente en algo construible</b>, y puedes mostrarle en un papel cómo va a funcionar el sistema antes de programarlo.</p>
+<p>La causa más común de que un proyecto software salga mal no es de código: es de expectativas. El cliente pidió "un sistema de inventario", tú interpretaste algo distinto, construiste tres meses y cuando le mostraste no era lo que había en su cabeza. Nadie puede señalar dónde está el error, porque el error estaba en la conversación inicial.</p>
+<p>Un diagrama y una historia de usuario por cada función resuelven buena parte de eso, porque son <b>objetos que se aprueban</b>: el cliente puede señalar una parte que no quiere, y cambiar el papel cuesta diez minutos. Cambiar el código cuesta días.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Entrevista y levantamiento</b>: cómo preguntarle al cliente sin obtener respuestas ambiguas.</li>
+<li><b>Historia de usuario</b>: "Como <b>rol</b>, quiero <b>acción</b>, para <b>beneficio</b>". Tres líneas, ninguna más.</li>
+<li><b>Criterios de aceptación</b>: cómo se sabe que esa historia está terminada. Sin ellos, "ya casi" es una discusión.</li>
+<li><b>Diagrama de casos de uso</b>: qué hace cada actor y qué no. Es el diagrama que el cliente sí entiende.</li>
+<li><b>Diagrama de clases</b>: las entidades, sus atributos y cómo se relacionan.</li>
+<li><b>Diagrama de secuencia</b>: el orden de los mensajes entre los objetos. Es el que explica dónde se traba el sistema.</li>
+<li><b>Distinguir lo que pidió de lo que necesita</b>: la diferencia entre el cliente y lo que de verdad le sirve.</li>
+</ul>
+
+<pre><code>Historia: Como vendedor, quiero registrar una venta
+           con varios productos, para no tener que
+           memorizar los precios.
+
+Aceptación:
+  - Given la lista de productos abierta
+  - When confirmo la venta
+  - Then se guarda con fecha y total
+  - And se descuenta el stock de cada producto</code></pre>
+
+<table>
+<tr><th>Lo que pidió</th><th>Lo que probablemente necesita</th></tr>
+<tr><td>"Que imprima la factura"</td><td>Un comprobante con número, fecha y total. Nadie va a comprar una impresora</td></tr>
+<tr><td>"Un login"</td><td>Saber quién cambió cada dato. Eso es historial, no solo contraseña</td></tr>
+<tr><td>"Que sea rápido"</td><td>Que no se sienta lento. Son criterios distintos, y hay que preguntarle qué tan rápido necesita</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>requirements</td><td>Requisitos: lo que el sistema debe hacer</td></tr>
+<tr><td>stakeholder</td><td>Interesado: quien recibe el impacto del sistema</td></tr>
+<tr><td>use case</td><td>Caso de uso: una interacción completa entre un actor y el sistema</td></tr>
+<tr><td>actor</td><td>Actor: quien o qué interactúa con el sistema</td></tr>
+<tr><td>user story</td><td>Historia de usuario</td></tr>
+<tr><td>acceptance criteria</td><td>Criterios de aceptación: cómo se sabe que está terminado</td></tr>
+<tr><td>class diagram</td><td>Diagrama de clases</td></tr>
+<tr><td>sequence diagram</td><td>Diagrama de secuencia: el orden de los mensajes</td></tr>
+<tr><td>scope</td><td>Alcance: qué queda incluido y qué no</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Lenguaje_Unificado_de_Modelado" target="_blank" rel="noopener">Wikipedia · Lenguaje Unificado de Modelado (UML)</a> — resumen del estándar y su historia.</li>
+<li><a href="https://app.diagrams.net" target="_blank" rel="noopener">draw.io (app.diagrams.net)</a> — editor de diagramas en el navegador, sin registro. Guarda en tu computador o en Google Drive.</li>
+<li><a href="https://plantuml.com" target="_blank" rel="noopener">PlantUML</a> — diagramas escritos en texto plano. Útil cuando el diagrama cambia cada semana, porque lo versionas junto al código.</li>
+</ul>
+
+<div class="nota">
+<h3>El requisito que no escribió</h3>
+<p>Cuando el cliente dice "que el sistema sea fácil de usar", no hay nada verificable ahí. El trabajo tuyo es traducirlo: "que la persona que atiende lo pueda usar sin Capacitación", o "que en tres pasos llegue al resultado". Si no se puede comprobar, no es un requisito: es un deseo.</p>
+<p>Y mira las alternativas, no solo lo que piden. La parte más valiosa de este módulo es la lista de <b>lo que decidiste no hacer</b>, con la razón. Esa lista es la que te protege el día que pidan "es que también quería que…".</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes un documento de requisitos con las historias de usuario y sus criterios de aceptación.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes al menos tres diagramas: casos de uso, clases y secuencia.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tu cliente leyó esos documentos y los aprobó <b>por escrito</b> (correo, chat o documento firmado).</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>En el documento está claro qué queda fuera del alcance y por qué.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Sabes señalar una diferencia entre lo que el cliente pidió y lo que realmente necesitaba.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el documento de requisitos con la aprobación escrita del cliente, los tres diagramas y la lista de decisiones de alcance.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo9/index.html">⚙️ Siguiente: backend y API →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m8'); bindChecklist('m8'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m8'));</script>
+</body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔍 M11 · Probar</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empieco?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🔍 M11 · Probar</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo sabiendo <b>comprobar que lo que hiciste funciona de verdad</b>, documentar un error con pasos para reproducirlo, y conseguir que alguien que no eras tú lo use antes de entregarlo.</p>
+<p>Cuando tú programas, tú sabes dónde mirar. Sabes que ese campo no acepta vacío, que ese botón se habilita después de elegir el cliente, que con los datos de prueba de la semana pasada todo cuadraba. El cliente no sabe nada de eso, y por eso es el que encuentra los errores que tú ya no alcanzas a ver.</p>
+<p>Probar no es la última etapa: es lo que separa "funciona" de "funciona para alguien más". Y un error documentado bien vale más que un sistema sin un solo fallo reportado: demuestra que el probaste.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Prueba manual</b>: seguir una lista de pasos y anotar qué pasa en cada uno.</li>
+<li><b>Caso de prueba</b>: el nombre de la situación, los pasos, el resultado esperado y el resultado obtenido.</li>
+<li><b>Leer el error</b>: el mensaje del navegador y el registro del servidor cuentan la mitad de la historia.</li>
+<li><b>Documentar un defecto</b>: qué pasa, cómo reproducirlo, qué se esperaba y qué pasó.</li>
+<li><b>Prueba exploratoria</b>: sin lista, improvisando. Es la que encuentra lo que nadie imaginó.</li>
+<li><b>Prueba con el cliente</b>: verlo usar el sistema y tomar nota sin intervenir.</li>
+<li><b>Pruebas automatizadas y unitarias</b> (opcional): las escribes una vez y corren siempre.</li>
+</ul>
+
+<pre><code>Caso: registrar cliente con teléfono repetido
+  Preparación: base de datos de prueba
+  Pasos: 1) entrar al formulario
+          2) escribir un teléfono ya existente
+          3) guardar
+  Esperado: avisa que el teléfono ya existe
+  Obtenido: guarda el cliente y no avisa nada
+  Estado: FALLA — abierto el issue #14</code></pre>
+
+<table>
+<tr><th>Lo que falla</th><th>Lo que haces</th></tr>
+<tr><td>Error de JavaScript en la consola</td><td>Leer el archivo y la línea; reproducir con el mismo dato</td></tr>
+<tr><td>Página en blanco</td><td>Ver el registro del servidor; casi siempre es una variable de entorno faltante</td></tr>
+<tr><td>Funciona con un dato y no con otro</td><td>Anotar el dato exacto y hacer un caso de prueba con ese dato</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>test / testing</td><td>Prueba / pruebas</td></tr>
+<tr><td>bug / defect</td><td>Error / defecto</td></tr>
+<tr><td>test case</td><td>Caso de prueba</td></tr>
+<tr><td>expected / actual result</td><td>Resultado esperado / resultado obtenido</td></tr>
+<tr><td>reproduce steps</td><td>Pasos para reproducir</td></tr>
+<tr><td>regression</td><td>Regresión: algo que funcionaba y dejó de funcionar</td></tr>
+<tr><td>edge case</td><td>Caso límite: el dato raro que rompe todo</td></tr>
+<tr><td>unit test</td><td>Prueba unitaria: prueba una función sola</td></tr>
+<tr><td>coverage</td><td>Cobertura: qué porcentaje del código se ha probado</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://www.w3schools.com/js/" target="_blank" rel="noopener">W3Schools · JavaScript</a> — los conceptos de prueba explicados de forma sencilla.</li>
+<li><a href="https://docs.djangoproject.com/es/4.2/topics/testing/" target="_blank" rel="noopener">Documentación del framework · pruebas</a> — para el framework que elegiste en el M9.</li>
+<li><a href="https://docs.github.com/es/issues" target="_blank" rel="noopener">GitHub Issues en español</a> — cómo reportar un defecto de forma que otra persona lo pueda entender.</li>
+<li><a href="https://docs.render.com" target="_blank" rel="noopener">Ayuda de tu proveedor de hosting</a> — para leer el registro cuando el fallo solo aparece en producción.</li>
+</ul>
+
+<div class="nota">
+<h3>Un error documentado vale oro</h3>
+<p>El objetivo de esta puerta no es "no tener errores". Nadie llega con cero. Es llegar con <b>un registro honesto</b> de qué probaste, qué encontraste y qué arreglaste. Eso es lo que separa a quien entregó un trabajo de quien entregó un sistema.</p>
+<p>Un defecto bien escrito tiene cuatro cosas: <b>dónde</b> pasa, <b>cómo reproducirlo</b>, <b>qué esperabas</b> y <b>qué pasó</b>. Con eso, arreglarlo toma diez minutos. Sin pasos, quien lo lea tiene que adivinar, y eso siempre toma más.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes un documento con los casos de prueba que ejecutaste y el resultado de cada uno.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Documentaste al menos un defecto real, con pasos para reproducirlo.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Al menos un defecto que encontraste está corregido y verificado.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Una persona que no eras tú probó el sistema antes que tú: el cliente, o alguien de tu casa.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes anotado qué encontraste en esa prueba de usuario, aunque no lo hayas arreglado todavía.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el documento de casos de prueba con resultados, la descripción del defecto con pasos, y las notas de la sesión con el usuario real.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../proyecto.html">🎯 Ir al proyecto real</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m11'); bindChecklist('m11'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m11'));</script>
+</body></html>
