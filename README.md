@@ -30,8 +30,10 @@ que **no** tienen, y es lo que este curso resuelve:
 |---|---|
 | Lógica y algoritmos — la base de todo | M1, y es el módulo que más se salta |
 | Frontend (HTML, CSS, JavaScript) | M3 y M4 |
-| Un problema real, con alguien real | M12, obligatorio |
+| Un problema real, con alguien real | M14, obligatorio |
 | Depurar código | M1, M4, y la página de atascos |
+| Accesibilidad | M12 |
+| Seguridad web — contraseñas, inyección, secretos | M13 |
 
 Las competencias de esos programas dicen **qué debe poder hacer** alguien, pero no
 dicen **qué hay que estudiar** para poder hacerlo, y no cubren ni la base lógica ni el
@@ -43,7 +45,7 @@ frontend ni el proyecto con cliente. Ese es el hueco que este curso llena.
 ova/
 ├── index.html          ruta, progreso y "continuar donde quedaste"
 ├── diagnostico.html    5 preguntas que fijan el punto de entrada
-├── modulo0/ … modulo11/   los 12 módulos con su puerta de salida
+├── modulo0/ … modulo13/   los 14 módulos con su puerta de salida
 ├── proyecto.html       M12 · el proyecto real, con campos que se guardan
 ├── atascos.html        qué hacer cuando te bloqueas
 ├── resultados.html     recorrido, insignias y exportación del progreso
@@ -54,7 +56,7 @@ ova/
 └── css/style.css
 ```
 
-## Las 13 puertas
+## Las 15 puertas
 
 | | Módulo | Puerta de salida |
 |---|---|---|
@@ -70,7 +72,9 @@ ova/
 | M9 | Backend y API | Sistema integrado de extremo a extremo |
 | M10 | Publicar | URL pública y visto bueno por escrito |
 | M11 | Probar | Casos de prueba ejecutados y errores documentados |
-| M12 | Proyecto real | Sistema en manos del cliente + repo + documentación |
+| M12 | Accesibilidad | Se opera sin ratón + auditoría con herramientas + una persona real lo probó |
+| M13 | Seguridad web | Contraseñas hasheadas, consultas parametrizadas, secretos fuera del repo |
+| M14 | Proyecto real | Sistema en manos del cliente + repo + documentación |
 
 ## Arquitectura
 
