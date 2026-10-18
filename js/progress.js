@@ -38,6 +38,7 @@ const RUTAS = {
   m3:'modulo3/index.html', m4:'modulo4/index.html', m5:'modulo5/index.html',
   m6:'modulo6/index.html', m7:'modulo7/index.html', m8:'modulo8/index.html',
   m9:'modulo9/index.html', m10:'modulo10/index.html', m11:'modulo11/index.html',
+  m12:'modulo12/index.html', m13:'modulo13/index.html',
   proyecto:'proyecto.html'
 };
 
@@ -46,5 +47,6 @@ const NOMBRES = {
   m3:'M3 · HTML y CSS', m4:'M4 · JavaScript', m5:'M5 · Git',
   m6:'M6 · Bases de datos', m7:'M7 · Programación a objetos',
   m8:'M8 · Requisitos y UML', m9:'M9 · Backend y API',
-  m10:'M10 · Publicar', m11:'M11 · Probar', proyecto:'M12 · Proyecto real'
+  m10:'M10 · Publicar', m11:'M11 · Probar',
+  m12:'M12 · Accesibilidad', m13:'M13 · Seguridad web', proyecto:'M14 · Proyecto real'
 };

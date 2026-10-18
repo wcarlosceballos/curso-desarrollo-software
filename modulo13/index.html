@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔐 M13 · Seguridad web</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html">🔧 M0 · Método</a>
+<a href="../modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html">🔍 M11 · Probar</a>
+<a href="../modulo12/index.html">♿ M12 · Accesibilidad</a>
+<a href="../modulo13/index.html">🔐 M13 · Seguridad web</a>
+<a href="../proyecto.html">🎯 M14 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🔐 M13 · Seguridad web</h1></header>
+<main>
+
+<div class="intro">
+<p>Este es el módulo más importante del curso para tu cliente, y el que casi nadie aprende por su cuenta.</p>
+<p>El motivo es sencillo: los dos módulos siguientes ya son la mitad del camino si no hay seguridad. Y tú vas a poner en manos de un tercero —una ferretería, un consultorio— datos que son de esa persona.</p>
+</div>
+
+<div class="aviso">
+<h3>⚠️ La Ley 1581 vuelve a aparecer aquí</h3>
+<p>En M3 te pedí autorización por escrito para usar datos de tu cliente. Eso era para no meterte en un problema legal. Este módulo es para que <b>los datos no se filtren</b>: la otra mitad del mismo asunto.</p>
+</div>
+
+<h2>Qué sales sabiendo hacer</h2>
+<ul>
+<li>Guardar contraseñas sin guardarlas en texto plano.</li>
+<li>Proteger las consultas a la base de datos contra inyección SQL.</li>
+<li>Entender por qué "ocultar el campo con JavaScript" no es seguridad.</li>
+<li>Separar lo que es secreto del código, para que no acabe en GitHub.</li>
+</ul>
+
+<h2>Las cinco cosas que importan</h2>
+
+<h3>1 · Las contraseñas nunca en texto plano</h3>
+<p>Si guardas "contraseña123" tal cual, quien lea tu base de datos tiene todas las contraseñas de todos los usuarios. No es un riesgo teórico: es exactamente lo que pasa cuando filtran una base.</p>
+<p>Se guardan <b>hasheadas</b>. Un hash es una función de una sola dirección: no se puede deshacer. Tú guardas el hash, y comparas hasheando lo que el usuario escribe.</p>
+<pre><code>// lo que guardas
+$2b$12$KIX3dFzKJH8XqWjNQf2bS.8nK9Lh3vQdEeVvB6XkQZ0mN0pTqK
+
+// lo que nunca guardas
+contraseña123</code></pre>
+<div class="nota">
+<p>Usa una biblioteca que ya lo hace: <b>bcrypt</b> o <b>argon2</b>. No implementes el algoritmo tú mismo. Nunca.</p>
+</div>
+
+<h3>2 · Inyección SQL</h3>
+<p>El ataque más famoso de la historia de la programación, y el más fácil de prevenir.</p>
+<p>El problema: si metes lo que el usuario escribió directo dentro de una consulta SQL, quien escribe <code>' OR '1'='1</code> en un campo de contraseña entra a todo.</p>
+<p>La solución se llama <b>consultas parametrizadas</b> o <b>consultas preparadas</b>: el valor del usuario viaja <b>separado</b> de la instrucción, así que nunca se interpreta como código.</p>
+<pre><code>// NUNCA — concatenar
+query = "SELECT * FROM usuarios WHERE pass = '" + entrada + "'"
+
+// SIEMPRE — parametrizar
+query = "SELECT * FROM usuarios WHERE pass = ?"
+ejecutar(query, [entrada])</code></pre>
+<div class="nota">
+<p>Si tu framework tiene forma de consultar que no sea concatenar, <b>úsala siempre</b>. Casi todos los frameworks modernos resuelven esto por ti si no lo haces mal.</p>
+</div>
+
+<h3>3 · No confíes en el cliente</h3>
+<p>Cualquiera puede editar el JavaScript de tu página desde las herramientas del navegador. Si tu validación está solo en el frontend, no existe.</p>
+<p><b>El frontend es para laexperience; el backend es para la seguridad.</b> Todo lo que importe, se comprueba en el backend. Siempre.</p>
+
+<h3>4 · XSS: no insertes lo del usuario como HTML</h3>
+<p>Si haces <code>innerHTML = textoDelUsuario</code>, quien escriba <code>&lt;script&gt;...&lt;/script&gt;</code> ejecuta su propio código en tu página. Se llama XSS.</p>
+<p>Usa <code>textContent</code> en vez de <code>innerHTML</code> cuando el dato viene de alguien. Es un cambio de una palabra que evita el ataque completo.</p>
+
+<h3>5 · Los secretos no van en el código</h3>
+<p>Contraseñas de base de datos, llaves de API, tokens: van en <b>variables de entorno</b>, nunca en el archivo.</p>
+<div class="aviso">
+<h3>⚠️ El error que más careers cuesta</h3>
+<p>Subir una contraseña al repositorio. Y se puede arreglar, pero <b>hay que rotarla</b>: Git guarda el historial para siempre, y aunque borres el archivo, la contraseña queda en los commits anteriores y en cualquier clon que alguien haya hecho.</p>
+<p>Por eso existe <code>.gitignore</code>, y por eso el curso Git insiste en el módulo 5.</p>
+</div>
+
+<h2>Lo que este módulo no te da</h2>
+<p>Autenticación completa —tokens, sesiones, recuperación de contraseña, doble factor— es un tema de varios días y cada framework lo hace distinto.</p>
+<p>Lo que sí te llevas es <b>entender los riesgos y saber qué preguntar</b>. Eso es lo que separa a alguien que programa de alguien que entiende por qué lo que programa no se rompe el primer día.</p>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>password / credential</td><td>contraseña / credencial</td></tr>
+<tr><td>hash / salt</td><td>hash / sal</td></tr>
+<tr><td>plaintext</td><td>texto plano</td></tr>
+<tr><td>injection (SQL injection)</td><td>inyección (inyección SQL)</td></tr>
+<tr><td>parameterized query</td><td>consulta parametrizada</td></tr>
+<tr><td>XSS</td><td>cross-site scripting</td></tr>
+<tr><td>sanitize / escape</td><td>sanitizar / escapar</td></tr>
+<tr><td>environment variable</td><td>variable de entorno</td></tr>
+<tr><td>secret / API key</td><td>secreto / llave de API</td></tr>
+<tr><td>authentication / authorization</td><td>autenticación / autorización</td></tr>
+<tr><td>session / token</td><td>sesión / token</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10</a> — los diez riesgos más comunes. Este módulo es una versión artesanal de esa lista.</li>
+<li><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank" rel="noopener">OWASP · Cryptographic Failures</a> — por qué las contraseñas se hashean.</li>
+<li><a href="https://owasp.org/Top10/A03_2021-Injection/" target="_blank" rel="noopener">OWASP · Injection</a> — la inyección SQL, bien explicada.</li>
+<li><a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a> — la referencia rápida que se usa en la práctica.</li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noopener">OWASP Web Security Testing Guide</a> — cómo probar lo que construiste.</li>
+<li>La documentación de tu framework, sección de seguridad. Siempre está ahí.</li>
+</ul>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Las contraseñas de tu sistema se guardan <b>hasheadas con bcrypt o argon2</b>. Puedes mostrar el hash y explicar por qué no se puede recuperar.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span><b>Ninguna consulta SQL concatena</b> lo que el usuario escribió. Todas son parametrizadas.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Ningún dato del usuario entra con <code>innerHTML</code>. Usas <code>textContent</code>.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span><b>Ningún secreto está en el repositorio</b>. Están en variables de entorno, y <code>.gitignore</code> lo cubre.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Sabes explicar, en tus palabras, <b>por qué un campo oculto con JavaScript no es seguridad</b>.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> las consultas de tu proyecto, el <code>.gitignore</code>, y el hash de una contraseña de prueba.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../proyecto.html">🎯 Ir al proyecto real →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m13'); bindChecklist('m13'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m13'));</script>
+</body></html>

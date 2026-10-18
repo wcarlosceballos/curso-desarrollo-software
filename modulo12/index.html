@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>♿ M12 · Accesibilidad</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html">🔧 M0 · Método</a>
+<a href="../modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html">🔍 M11 · Probar</a>
+<a href="../modulo12/index.html">♿ M12 · Accesibilidad</a>
+<a href="../modulo13/index.html">🔐 M13 · Seguridad web</a>
+<a href="../proyecto.html">🎯 M14 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>♿ M12 · Accesibilidad</h1></header>
+<main>
+
+<div class="intro">
+<p>Un sistema que una persona no puede usar porque usa el teclado distinto, o ve mal, o tiene 62 años, no está terminado. Está a medio camino.</p>
+<p>Este módulo llega tarde a propósito. La accesibilidad es barata mientras construyes y carísima cuando la agregas después. Aquí se convierte en un módulo corto y de verificación.</p>
+</div>
+
+<div class="intro">
+<p><b>Tu cliente es una ferretería, no una agencia web.</b> ¿Por qué te corresponde esto? Porque <b>uno de cada dos usuarios de tu sistema va a ser alguien mayor, o alguien con baja visibilidad, o alguien que solo tiene el teclado.</b> No es un caso excepcional: es la mitad de las personas.</p>
+</div>
+
+<h2>Qué sales sabiendo hacer</h2>
+<ul>
+<li>Navegar y operar todo tu sistema <b>sin usar el ratón</b>.</li>
+<li>Aplicar las cuatro cosas de accesibilidad que resuelven el 80 % de los problemas.</li>
+<li>Auditar tu propio sistema con herramientas gratuitas y con personas.</li>
+<li>Argumentar por qué esto no es un extra: es parte de que el sistema funcione.</li>
+</ul>
+
+<h2>El argumento, para que no loskipes</h2>
+<p>Vas a necesitar justificar el tiempo que esto te toma. No lo vendas como bondad — véndelo comoFunctionamiento:</p>
+<ul>
+<li>El teclado es lo primero que usa un cajero con la mano ocupada. También es lo único que usa quien no ve.</li>
+<li>El contraste alto no es solo para ciegos: es para un perfectamente sano en un celular a Full sol.</li>
+<li>Los <code>&lt;label&gt;</code> bien puestos funcionan para todos: el navegador los muestra como sugerencia al escribir.</li>
+<li>Un formulario sin <code>label</code> es inusable para un lector de pantalla. Punto.</li>
+</ul>
+
+<h2>Las cuatro cosas que resuelven el 80 %</h2>
+
+<h3>1 · Todo se opera con teclado</h3>
+<p>Tab para moverse, Enter o Espacio para activar. Eso debería bastar para <b>todo</b> tu sistema: registrarse, guardar, borrar, navegar el menú.</p>
+<p>Lo que lo rompe: un elemento con <code>onclick</code> que no es un <code>&lt;button&gt;</code>, o un menú que solo se abre al pasar el ratón por encima.</p>
+<pre><code>&lt;!-- mal: no se puede activar con teclado --&gt;
+&lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;
+
+&lt;!-- bien --&gt;
+&lt;button onclick="guardar()"&gt;Guardar&lt;/button&gt;</code></pre>
+
+<h3>2 · Etiquetas y roles correctos</h3>
+<p>No uses un <code>&lt;div&gt;</code> donde va un <code>&lt;button&gt;</code>, ni un párrafo donde va un título. El lector de pantalla navega por <b>estructura</b>, y si la estructura no está, no hay nada que leer.</p>
+<p>Cada campo de formulario necesita su <code>&lt;label&gt;</code>:</p>
+<pre><code>&lt;label for="producto"&gt;Nombre del producto&lt;/label&gt;
+&lt;input id="producto" required&gt;</code></pre>
+
+<h3>3 · Contraste suficiente</h3>
+<p>Texto gris claro sobre blanco es el error más común de todos. El mínimo es 4.5:1 para texto normal y 3:1 para texto grande. Es un número, no una opinión.</p>
+
+<h3>4 · Mensajes que se anuncian</h3>
+<p>Si guardaste y le avisaste al usuario solo con un color, quien no ve el color no se entera. Los errores y las confirmaciones van en una región que el lector de pantalla anuncia.</p>
+<pre><code>&lt;div id="aviso" role="status" aria-live="polite"&gt;&lt;/div&gt;</code></pre>
+
+<h2>Auditar tu propio sistema</h2>
+
+<h3>Herramientas gratuitas</h3>
+<ul>
+<li><b>Navegador:</b> navega tu sitio solo con Tab. Si te pierdes, el sitio falló. Es la prueba más rápida y la que más hallazgos da.</li>
+<li><b>Lighthouse</b> — viene incluido en Chrome (DevTools → Lighthouse). Tiene una sección de accesibilidad y es gratis.</li>
+<li><b>WAVE</b> — extensión del navegador, muestra errores de accesibilidad visualmente sobre tu página.</li>
+<li><b>axe DevTools</b> — extensión que audita la página donde estás, sin pegarle nada.</li>
+</ul>
+
+<h3>La prueba que ninguna herramienta reemplaza</h3>
+<p>Pídele a <b>una persona</b> que use tu sistema. No a un amigo que ya sabe cómo funciona. Pídele que lo haga sin ayuda y <b>no lo corrijas</b> mientras lo intenta.</p>
+<p>Casi siempre descubre en diez minutos lo que las herramientas no ven: que no entendió un mensaje, que no sabe que guardó, que un campo se llama "Cod." y no sabe qué es.</p>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>accessibility (a11y)</td><td>accesibilidad</td></tr>
+<tr><td>screen reader</td><td>lector de pantalla</td></tr>
+<tr><td>alt text</td><td>texto alternativo</td></tr>
+<tr><td>label</td><td>etiqueta</td></tr>
+<tr><td>role</td><td>rol (de un elemento)</td></tr>
+<tr><td>aria-live</td><td>región que se anuncia sola</td></tr>
+<tr><td>keyboard navigation</td><td>navegación por teclado</td></tr>
+<tr><td>focus</td><td>foco</td></tr>
+<tr><td>contrast ratio</td><td>proporción de contraste</td></tr>
+<tr><td>skip link</td><td>enlace de salto al contenido</td></tr>
+<tr><td>WCAG</td><td>norma de accesibilidad web</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">W3C · WCAG</a> — la norma. No la leas entera: úsala como referencia de criterio.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/Accessibility" target="_blank" rel="noopener">MDN · Accesibilidad</a> — explanations prácticas en español.</li>
+<li><a href="https://webaim.org/resources/" target="_blank" rel="noopener">WebAIM</a> — guías y checklists. Las guías de entrada son las mejores que hay.</li>
+<li><a href="https://deque.com/axe/" target="_blank" rel="noopener">axe-core</a> — el motor de auditoría que usan las herramientas.</li>
+<li><a href="https://www.w3.org/WAI/test-evaluate/" target="_blank" rel="noopener">W3C · Easy Checks</a> — una revisión de accesibilidad en 30 minutos, sin herramientas.</li>
+</ul>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Puedes <b>operar tu sistema entero sin ratón</b>: registrarse, guardar, borrar, navegar el menú. Solo con Tab, Enter y flechas.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span><b>Cero errores críticos</b> en Lighthouse y axe sobre las páginas de tu proyecto.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Todos los campos tienen <code>&lt;label&gt;</code> y todas las imágenes tienen <code>alt</code>.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Los mensajes de éxito y de error <b>se anuncian</b>, no dependen solo del color.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span><b>Una persona real</b> lo usó sin tu ayuda, y anotaste qué no entendió.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el informe de Lighthouse, y la lista de cosas que la persona no pudo hacer.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo13/index.html">🔐 Ir a M13 · Seguridad web →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m12'); bindChecklist('m12'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m12'));</script>
+</body></html>

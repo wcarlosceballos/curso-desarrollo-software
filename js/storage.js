@@ -5,7 +5,7 @@ const KEY = 'cds_progress';
 // Las 13 puertas del curso, en orden. M12 (proyecto) se llama 'proyecto'.
 const PUERTAS = [
   'm0','m1','m2','m3','m4','m5','m6',
-  'm7','m8','m9','m10','m11','proyecto'
+  'm7','m8','m9','m10','m11','m12','m13','proyecto'
 ];
 
 function getProgress(){
