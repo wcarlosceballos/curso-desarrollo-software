@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🌐 M3 · HTML y CSS</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html">🔧 M0 · Método</a>
+<a href="../modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html">🔍 M11 · Probar</a>
+<a href="../proyecto.html">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🌐 M3 · HTML y CSS — y aquí arranca tu proyecto</h1></header>
+<main>
+
+<div class="intro">
+<p>Este es el momento más importante del curso, y no porque HTML y CSS sean difíciles. Son lo más fácil que vas a aprender.</p>
+<p>Es importante porque es el día que <b>pones algo en internet y se lo mandas a una persona</b>. Esa sensación no la produce nada más en toda la formación, y es lo que sostiene a la gente cuando llega el mes seis.</p>
+</div>
+
+<div class="aviso">
+<h3>⚠️ Y aquí empieza el proyecto real</h3>
+<p>Antes de seguir leyendo, necesitas responder una pregunta: <b>¿de quién es el problema que vas a resolver?</b></p>
+<p>No puede ser un ejercicio de libro. No puede ser la idea loca de un estudiante. Tiene que ser alguien que <b>hoy</b> está perdiendo tiempo, plata o trabajo por algo que un sistema podría arreglar.</p>
+</div>
+
+<h2>Qué sales sabiendo hacer</h2>
+<ul>
+<li>Poner una página en internet y que se vea en un navegador real.</li>
+<li>Publicar y <b>enviarle el enlace a alguien</b>.</li>
+<li>Distinguir qué es estructura (HTML) y qué es apariencia (CSS).</li>
+<li>Escribir HTML que un lector de pantalla pueda entender.</li>
+</ul>
+
+<h2>El proyecto: encuentra a tu cliente</h2>
+
+<p>Haz esta lista de lo que conoces de cerca, y búscalo:</p>
+<ul>
+<li>Una ferretería que lleva el inventario en un cuaderno.</li>
+<li>Una asociación que registra la asistencia en una hoja.</li>
+<li>Un restaurante que recibe los mismos pedidos por WhatsApp.</li>
+<li>Un consultorio que pierde expedientes.</li>
+<li>La biblioteca municipal, o el colegio, o la junta de vecinos.</li>
+</ul>
+
+<p>Y pregúntale: <b>¿qué te hace perder tiempo todos los días?</b> La respuesta va a ser el proyecto.</p>
+
+<div class="nota">
+<p>Empieza pequeño. Un sistema que registra lo de una ferretería y ahorra dos horas al mes es mejor curso que una app social ambiciosa que nadie usa.</p>
+<p>Y no inventes el cliente: búscalo. Pregúntale, escúchalo, y anota sus palabras textuales. Esas palabras valen más que cualquier tutorial de análisis de requisitos.</p>
+</div>
+
+<h2>Contenido del módulo</h2>
+
+<h3>HTML es estructura</h3>
+<p>HTML dice <b>qué es cada cosa</b>: esto es un título, esto es un párrafo, esto es una tabla. No dice cómo se ve.</p>
+<pre><code>&lt;h1&gt;Inventario de la ferretería&lt;/h1&gt;
+&lt;p&gt;Herramientas registradas&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Producto&lt;/th&gt;&lt;th&gt;Cantidad&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Martillos&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+<h3>CSS es apariencia</h3>
+<p>CSS dice <b>cómo se ve</b>: colores, tamaños, espacios. Toca el estilo, nunca la estructura.</p>
+<p>Si tu CSS estáorro en todas partes y el HTML es un enredo de estilos en línea, algo salió mal: separaste mal las dos cosas.</p>
+
+<h3>Modelo de caja</h3>
+<p>Todo elemento en una página es una caja con cuatro lados: contenido, relleno, borde y margen. Cuando algo no se alinea, casi siempre es porque esos cuatro no están cuadrados.</p>
+
+<h3>Formularios</h3>
+<p>El corazón de cualquier sistema: es por donde entra la información. Antes de darle estilos, pregúntate si alguien con 60 años y sin buena vista lo puede llenar.</p>
+
+<h3>Accesibilidad: lo mínimo, desde el día uno</h3>
+<p>No es un extra para después. Es barato ahora y carísimo después:</p>
+<ul>
+<li>Etiquetas correctas: un <code>&lt;h1&gt;</code> para el título, <code>&lt;button&gt;</code> para botones, <code>&lt;label&gt;</code> para cada campo.</li>
+<li><code>alt</code> en todas las imágenes. Si es decorativa, <code>alt=""</code>.</li>
+<li>Contraste suficiente entre texto y fondo.</li>
+<li>Todo control se maneja con teclado.</li>
+</ul>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>markup</td><td>marcado</td></tr>
+<tr><td>tag / element</td><td>etiqueta / elemento</td></tr>
+<tr><td>attribute</td><td>atributo</td></tr>
+<tr><td>semantic</td><td>semántico</td></tr>
+<tr><td>stylesheet</td><td>hoja de estilos</td></tr>
+<tr><td>layout</td><td>distribución, diseño</td></tr>
+<tr><td>responsive</td><td>responsivo, adaptable</td></tr>
+<tr><td>alt text</td><td>texto alternativo</td></tr>
+<tr><td>accessibility</td><td>accesibilidad</td></tr>
+<tr><td>form / input</td><td>formulario / campo</td></tr>
+<tr><td>deploy / deployment</td><td>desplegar / despliegue</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener">MDN Web Docs en español</a> — la referencia oficial. Si algo no lo entiendes, empieza por aquí. Es más técnica que los tutoriales, y por eso es mejor.</li>
+<li><a href="https://web.dev/learn" target="_blank" rel="noopener">web.dev Learn</a> — curso gratuito de Google, en español, con ejercicios.</li>
+<li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freeCodeCamp</a> — la certificación "Responsive Web Design".</li>
+<li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools HTML</a> — para probar cosas rápidas. Úsalo como referencia, no como curso único.</li>
+<li>Para publicar gratis y ya: <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> o <a href="https://netlify.com/" target="_blank" rel="noopener">Netlify</a>.</li>
+</ul>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes <b>una página publicada en un enlace real</b> y <b>se la mandaste a alguien</b>. No un archivo local: un enlace que funciona en otro computador.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes <b>el nombre de tu cliente</b> y el problema de él escrito en una frase, con sus palabras.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>La página tiene al menos <b>una tabla y un formulario</b>, con etiquetas correctas.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>La página se ve bien en <b>celular y en computador</b>.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>No hay <b>ninguna imagen sin texto alternativo</b>.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el enlace publicado, y la frase del problema de tu cliente.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo4/index.html">⚡ Ir a M4 · JavaScript →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m3'); bindChecklist('m3'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m3'));</script>
+</body></html>

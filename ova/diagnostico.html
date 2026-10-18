@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🩺 ¿Por dónde empiezo?</title>
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="index.html">🏠 Inicio</a>
+<hr>
+<a href="modulo0/index.html">🔧 M0 · Método</a>
+<a href="modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="modulo2/index.html">💡 M2 · Programación base</a>
+<a href="modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="modulo11/index.html">🔍 M11 · Probar</a>
+<a href="proyecto.html">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="atascos.html">🆘 Si te atascas</a>
+<a href="resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🩺 ¿Por dónde empiezo?</h1></header>
+<main>
+
+<div class="intro">
+<p>Este curso tiene dos caminos distintos de entrada y no tienen nada que ver. Uno toma <b>meses</b>, el otro <b>un día</b>. Acertar en cuál es tuyo te ahorra semanas.</p>
+<p>Responde con sinceridad. No se guarda nada salvo el resultado.</p>
+</div>
+
+<div class="quiz">
+<h2>1 · ¿Alguna vez has escrito código?</h2>
+<button onclick="responder('q1','novato')">Nunca lo he hecho</button>
+<button onclick="responder('q1','copiador')">He seguido un tutorial</button>
+<button onclick="responder('q1','programa')">He hecho programas propios</button>
+</div>
+
+<div class="quiz">
+<h2>2 · Si te toca leer un texto técnico en inglés, ¿qué pasa?</h2>
+<button onclick="responder('q2','bien')">Lo leo, aunque sea lento</button>
+<button onclick="responder('q2','traduce')">Busco la traducción</button>
+<button onclick="responder('q2','nada')">Paso al video</button>
+</div>
+
+<div class="quiz">
+<h2>3 · ¿Tolerarías un mes sin ver resultados?</h2>
+<button onclick="responder('q3','si')">Sí, si el plan es claro</button>
+<button onclick="responder('q3','medio')">Si veo algo funcionando</button>
+<button onclick="responder('q3','no')">No, necesito ver avance</button>
+</div>
+
+<div class="quiz">
+<h2>4 · ¿Tienes a alguien real con un problema real cerca?</h2>
+<button onclick="responder('q4','si')">Sí, y sé cuál</button>
+<button onclick="responder('q4','talvez')">Tengo a quién preguntarle</button>
+<button onclick="responder('q4','no')">No tengo a nadie</button>
+</div>
+
+<div class="quiz">
+<h2>5 · ¿Cuánto tiempo por semana puedes?</h2>
+<button onclick="responder('q5','poco')">Menos de 5 horas</button>
+<button onclick="responder('q5','medio')">Entre 5 y 15</button>
+<button onclick="responder('q5','mucho')">Más de 15</button>
+</div>
+
+<div id="res"></div>
+
+<div class="card">
+<h3>Las tres respuestas que importan</h3>
+<p><b>La 4 es la más importante.</b> Si no tienes a nadie con un problema, el curso se vuelve un curso de ejercicios y pierde la mitad de lo que enseña. Busca a alguien primero: la ferretería, la asociación, el consultorio, la biblioteca.</p>
+<p><b>La 3 define si este curso es para ti.</b> Está diseñado para el que tolera el mes uno sin ver nada funcionando, porque la recompensa viene después. Si necesitas ver resultados inmediatos, empieza por un proyecto pequeño y ya.</p>
+<p><b>La 1 decide tu entrada.</b> Si nunca has programado, entras por M0 y M1. Si solo has seguido tutoriales, probablemente puedes saltarte M1 — pero hazlo igual.</p>
+</div>
+
+<p><a class="btn" href="index.html">🏠 Volver al inicio</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/progress.js"></script>
+<script>
+// Diagnóstico: 5 preguntas, resultado al contestarlas todas.
+const RESPUESTAS = {};
+function responder(k, v){
+  RESPUESTAS[k] = v;
+  document.getElementById('res').innerHTML = '<p><b>Registrado.</b> Contesta las 5 preguntas.</p>';
+  if(Object.keys(RESPUESTAS).length < 5) return;
+
+  const nuncaProgramo = RESPUESTAS.q1 === 'novato';
+  const soloTutorial = RESPUESTAS.q1 === 'copiador';
+  const tieneCliente  = RESPUESTAS.q4 === 'si';
+  const tiempo       = RESPUESTAS.q5;
+
+  let inicio, msg;
+  if(nuncaProgramo){
+    inicio = 'modulo0/index.html';
+    msg = '<b>Empieza en M0 · Método</b>. Después M1 · Lógica y algoritmos, que es el módulo que más se salta la gente y el que sostiene todo lo demás.';
+  } else if(onlyTutorial = soloTutorial){
+    inicio = 'modulo1/index.html';
+    msg = 'Ya sabes la mecánica de escribir código. <b>Pasa a M1 · Lógica</b> y hazlo de verdad, no como en los tutoriales: aquí el punto no es escribir código, es descomponer.';
+  } else {
+    inicio = 'modulo5/index.html';
+    msg = 'Ya programas. <b>Pasa a M5 · Git</b> y sigue la ruta normal de ahí en adelante. Vuelve a M1 más adelante si notas que la lógica es tu punto débil.';
+  }
+
+  let nota = '';
+  if(!tieneCliente){
+    nota = '<div class="aviso"><h3>⚠️ Sin cliente, la mitad del curso no existe</h3><p>El M12 es un proyecto con una persona real. Antes de llegar a M3, busca a alguien que hoy pierda tiempo o plata en algo. Una ferretería con inventario en cuaderno, una asociación que registra asistencia en papel, un consultorio que pierde expedientes. Empieza por la pregunta: <i>¿qué te hace perder tiempo todos los días?</i></p></div>';
+  } else {
+    nota = '<div class="nota"><p>Ya tienes cliente. Ese es el activo más valioso del curso — escríbele hoy, no cuando llegues a M3.</p></div>';
+  }
+
+  let ritmo = '';
+  if(tiempo === 'poco') ritmo = 'Con menos de 5 horas semanales el curso va a tomar bastante. Es normal: las puertas son de capacidad, no de tiempo. No te apresures por cumplir un plazo, porque no hay plazo.';
+  if(tiempo === 'mucho') ritmo = 'Con más de 15 horas semanales el proyecto real puede empezar antes. Aun así, M1 sigue siendo obligatorio: es el módulo que evita que todo lo demás se te caiga.';
+
+  document.getElementById('res').innerHTML =
+    '<div class="puerta"><h3>Tu punto de partida</h3><p>' + msg + '</p>' +
+    '<p style="margin-top:14px">' + nota + '</p>' +
+    '<p style="margin-top:12px">' + ritmo + '</p>' +
+    '<p style="margin-top:16px"><a class="btn" href="' + inicio + '">Empezar →</a></p></div>';
+}
+</script>
+</body></html>

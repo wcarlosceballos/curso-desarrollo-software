@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚡ M4 · JavaScript</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html">🔧 M0 · Método</a>
+<a href="../modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html">🔍 M11 · Probar</a>
+<a href="../proyecto.html">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>⚡ M4 · JavaScript</h1></header>
+<main>
+
+<div class="intro">
+<p>Este es el módulo más pesado del curso. Está bien que lo sea: es donde tu proyecto deja de ser una página bonita y se vuelve algo que hace.</p>
+<p>Hasta M3 tu página mostraba lo que tú escribiste a mano. A partir de aquí, <b>reacciona</b>: el usuario hace algo, el sistema responde.</p>
+</div>
+
+<h2>Qué sales sabiendo hacer</h2>
+<ul>
+<li>Que la página reaccione a clics, formularios y teclado.</li>
+<li>Traer datos de otro lado y mostrarlos en pantalla.</li>
+<li>Guardar información en el navegador para que persista.</li>
+<li>Manejar errores sin que todo se rompa.</li>
+</ul>
+
+<h2>Contenido del módulo</h2>
+<ul>
+<li><b>Variables y funciones</b> — ya los sabes de M2. Ahora con otra sintaxis.</li>
+<li><b>Arreglos y objetos</b> — la estructura más usada del lenguaje. Mapear una lista a pantalla es el 20 % del trabajo real.</li>
+<li><b>El DOM</b> — cómo JavaScript le habla a la página: crear, cambiar y borrar elementos.</li>
+<li><b>Eventos</b> — clic, envío de formulario, cambio. Cada interacción del usuario es un evento.</li>
+<li><b>fetch y APIs</b> — pedir datos a otro sistema y convertirlos con JSON.</li>
+<li><b>Almacenamiento local</b> — que los datos sobrevivan al cerrar el navegador.</li>
+<li><b>Manejo de errores</b> — <code>try / catch</code>. Un sistema que se cae cuando falta internet no es un sistema.</li>
+</ul>
+
+<h3>Lo mínimo para que el sistema se sienta real</h3>
+<p>Con esto ya tienes un producto funcional y no una maqueta:</p>
+<pre><code>&lt;form id="agregar"&gt;
+  &lt;label for="producto"&gt;Producto&lt;/label&gt;
+  &lt;input id="producto" required&gt;
+  &lt;button type="submit"&gt;Agregar&lt;/button&gt;
+&lt;/form&gt;
+&lt;table id="inventario"&gt;&lt;/table&gt;</code></pre>
+<p>El usuario escribe, el sistema guarda, la tabla se actualiza. Eso ya es el inventario de la ferretería funcionando.</p>
+
+<h3>Lo que más se olvida</h3>
+<ul>
+<li><b>Validar antes de procesar.</b> Un campo vacío rompe el sistema. Valida y muestra un mensaje claro.</li>
+<li><b>No mostrar errores técnicos al usuario.</b> "undefined is not a function" no le sirve a nadie. Muestra "No pudimos guardar. Intenta de nuevo."</li>
+<li><b>Cargar antes de guardar.</b> Al abrir la página, lee lo guardado y muéstralo. Si no, parece que el sistema perdió todo.</li>
+</ul>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>DOM</td><td>modelo de objetos del documento</td></tr>
+<tr><td>element / node</td><td>elemento / nodo</td></tr>
+<tr><td>event</td><td>evento</td></tr>
+<tr><td>listener / handler</td><td>escucha / manejador</td></tr>
+<tr><td>query / selector</td><td>consulta / selector</td></tr>
+<tr><td>fetch / request</td><td>solicitar / petición</td></tr>
+<tr><td>response</td><td>respuesta</td></tr>
+<tr><td>JSON</td><td>formato de intercambio de datos</td></tr>
+<tr><td>API</td><td>interfaz de programación</td></tr>
+<tr><td>async / await</td><td>asíncrono</td></tr>
+<tr><td>try / catch</td><td>intentar / capturar el error</td></tr>
+<tr><td>local storage</td><td>almacenamiento local del navegador</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://javascript.info/" target="_blank" rel="noopener">javascript.info</a> — completo, gratuito, en español. <b>El mejor recurso que existe para esto.</b> Parts 1 y 2 son el módulo entero.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener">MDN · JavaScript</a> — referencia oficial. Úsala para confirmar, no para aprender de cero.</li>
+<li><a href="https://eloquentjavascript.net/" target="_blank" rel="noopener">Eloquent JavaScript</a> — gratuito en línea y traducido al español. Más narrativo, muy ameno.</li>
+<li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freeCodeCamp</a> — ejercicios con verificación automática, uno a uno.</li>
+</ul>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tu página <b>reacciona</b>: un clic o un formulario cambia algo en pantalla, sin recargarla.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Los datos que el usuario escribe <b>se guardan</b> y siguen ahí cuando cierras y vuelves a abrir la página.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Traes datos <b>de una API externa</b> y los muestras.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Si el sistema falla, muestra un <b>mensaje que un usuario pueda entender</b>, no el texto técnico del error.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Todo esto es la <b>primera versión funcional del problema de tu cliente</b> — no un ejercicio de libro.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el enlace funcionando, con la demostración de que los datos persisten.</p>
+<p style="margin-top:10px"><span id="gate-estato"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo5/index.html">🌿 Ir a M5 · Git y GitHub →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m4'); bindChecklist('m4'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m4'));</script>
+</body></html>

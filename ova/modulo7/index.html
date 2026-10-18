@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔷 M7 · Programación a objetos</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🔷 M7 · Programación a objetos</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo sabiendo <b>organizar tu código en piezas con responsabilidades claras</b>, y sabes explicar con un diagrama qué hace cada pieza.</p>
+<p>El problema aparece siempre igual: el proyecto crece, las funciones se llaman unas a otras, y llega el día en que para cambiar el precio de un producto tienes que editar siete archivos. Eso no es un error de lógica: es un problema de estructura, y por eso existen los objetos.</p>
+<p>La programación a objetos es una forma de <b>pensar</b>, no un requisito que alguien te impone. Un archivo que hace una sola cosa, bien nombrado, ya está bien organizado aunque sea un procedimiento. Los objetos aparecen cuando el sistema tiene entidades con datos y comportamiento: un cliente, una orden, una factura.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Clase y objeto</b>: la clase es el molde, el objeto es la pieza concreta. <code>Producto</code> es la clase; cada producto que registras es un objeto.</li>
+<li><b>Atributos y métodos</b>: lo que el objeto <i>es</i> y lo que el objeto <i>hace</i>.</li>
+<li><b>Encapsulamiento</b>: los datos se cambian con métodos, no por la puerta de atrás. Por eso el código no se rompe tanto.</li>
+<li><b>Composición</b>: un objeto que contiene otros. Una orden <i>tiene</i> líneas de pedido.</li>
+<li><b>Herencia</b>: una clase que empieza donde otra termina. Úsala con cuidado: es la relación más fácil de usar mal.</li>
+<li><b>Interfaces</b>: el contrato que debe cumplir una clase, sin importar cómo lo haga por dentro.</li>
+<li><b>SOLID</b>: cinco principios para que el código sea fácil de cambiar. Conocidos; no adorados.</li>
+</ul>
+
+<pre><code>class Orden {
+  constructor(cliente, lineas) {
+    this.cliente = cliente;   // composición: la orden "tiene" un cliente
+    this.lineas = lineas;
+  }
+  total() { return this.lineas.reduce((t, l) => t + l.precio, 0); }
+}</code></pre>
+
+<table>
+<tr><th>Si te pasa esto…</th><th>El problema es…</th></tr>
+<tr><td>Cambiar un dato requiere tocar muchos archivos</td><td>Todo está conectado. Falta componer</td></tr>
+<tr><td>Copiaste una función y cambiaste un número</td><td>Duplicación. Copia y pega es deuda técnica</td></tr>
+<tr><td>Una subclase necesita cambiar cosas de su padre</td><td>La herencia no era la relación correcta. Probá composición</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>class / object</td><td>Clase / objeto</td></tr>
+<tr><td>attribute / property</td><td>Atributo: el dato que guarda el objeto</td></tr>
+<tr><td>method</td><td>Método: lo que el objeto sabe hacer</td></tr>
+<tr><td>constructor</td><td>Constructor: lo que se ejecuta al crear el objeto</td></tr>
+<tr><td>encapsulation</td><td>Encapsulamiento: proteger los datos detrás de métodos</td></tr>
+<tr><td>inheritance</td><td>Herencia: reutilizar y extender otra clase</td></tr>
+<tr><td>composition</td><td>Composición: un objeto que contiene a otros</td></tr>
+<tr><td>interface</td><td>Interfaz: el contrato que una clase debe cumplir</td></tr>
+<tr><td>refactor</td><td>Refactorizar: cambiar el código sin cambiar lo que hace</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank" rel="noopener">freeCodeCamp · Object Oriented Programming</a> — curso gratuito, en inglés, con ejercicios en el navegador.</li>
+<li><a href="https://es.wikipedia.org/wiki/SOLID" target="_blank" rel="noopener">Wikipedia · SOLID</a> — los cinco principios explicados sin jerga.</li>
+<li><a href="https://refactoring.guru/es/design-patterns" target="_blank" rel="noopener">Refactoring Guru</a> — patrones y técnicas de refactor con ejemplos en varios lenguajes. Traducido al español.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener">MDN · Introducción a la POO en JavaScript</a> — la referencia oficial del navegador, en español.</li>
+</ul>
+
+<div class="nota">
+<h3>Composición o herencia</h3>
+<p>La regla práctica: si dices "es un", probablemente sea herencia. Si dices "tiene un", es composición. Y fíjate en qué estás dudando: <b>cuando dudas entre herencia y composición, casi siempre conviene composición</b>. Permite cambiar las piezas sin arrastrar a los hijos, y nadie termina heredando de una clase que un día hay que cambiarle todo.</p>
+<p>Sobre SOLID: leer los cinco principios está bien. Aplicar los cinco a un proyecto de 300 líneas es sobre-ingeniería. Aplicarlos cuando el código ya te está doliendo es exactamente lo que toca.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes un diagrama de clases de tu sistema, dibujado en una herramienta o a mano.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Cada clase del diagrama existe en el código, con los mismos atributos y métodos.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Cuando cambias algo en el diagrama, cambias también el código: los dos no se contradicen.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Refactorizaste algo para eliminar código duplicado, sin cambiar el comportamiento.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Puedes explicar con un ejemplo de tu proyecto cuándo usaste composición y por qué no herencia.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el diagrama de clases, el código de las clases que aparecen en él, y el antes/después del refactor que eliminaste.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo8/index.html">📐 Siguiente: requisitos y UML →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m7'); bindChecklist('m7'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m7'));</script>
+</body></html>

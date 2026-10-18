@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🚀 M10 · Publicar</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🚀 M10 · Publicar</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo con un sistema <b>en un servidor real</b>, con una dirección pública, que tu cliente puede abrir desde su celular y le sirve a alguien más que a ti.</p>
+<p>Un sistema en tu computador es una maqueta por muy terminada que esté. Mientras viva en <code>localhost</code>, no existe para el cliente: no puede usarlo, no puede mostrarlo, y no hay forma de que su empresa lo adopte. Publicar es el paso que convierte trabajo de desarrollo en producto.</p>
+<p>Lo que corresponde aquí es sencillo y lo peligroso también: casi todos estos servicios tienen una versión gratuita que alcanza para un proyecto de cliente pequeño. El riesgo no es pagar: es <b>filtrar una contraseña</b>. Trátalo como la regla más importante del módulo.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Un servicio de hosting</b>: Railway, Render, PythonAnywhere o Vercel. Cada uno tiene plan gratuito con límites distintos.</li>
+<li><b>Variables de entorno</b>: el lugar correcto para las contraseñas y las claves de la base de datos.</li>
+<li><b>El flujo de despliegue</b>: conectas el repositorio de GitHub, el servicio lo instala y lo publica solo.</li>
+<li><b>Registro de errores</b>: donde mirar cuando algo falla en el servidor y no falla en tu computador.</li>
+<li><b>Dominio</b> (opcional): un nombre propio en lugar de la dirección que te regala el servicio.</li>
+<li><b>Docker y CI/CD</b> (opcional): solo cuando lo anterior ya esté sólido.</li>
+</ul>
+
+<pre><code># Así se lee una variable de entorno, no se escribe:
+import os
+DB_PASSWORD = os.environ.get("DB_PASSWORD")</code></pre>
+
+<div class="aviso">
+<h3>Nunca subas una contraseña al repositorio</h3>
+<p>Ni de la base de datos, ni de un correo, ni de una API que te da acceso a algo. Nunca. Y no es un consejo de buena conducta: si la contraseña está en el historial de Git, <b>cualquiera que vea el repositorio la tiene</b>, y para siempre. Si ya te pasó, rotar la clave de inmediato, y asumiendo que esa clave queda quemada.</p>
+<p>La solución es una sola cosa: <code>.gitignore</code> con el archivo donde están tus secretos, y variables de entorno configuradas en el panel del servicio de hosting. El <code>.gitignore</code> se escribe en el M5; aquí se vuelve crítico.</p>
+</div>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>deploy / deployment</td><td>Desplegar / despliegue: poner en marcha en el servidor</td></tr>
+<tr><td>hosting</td><td>Alojamiento: el servicio donde vive el sistema</td></tr>
+<tr><td>build</td><td>Compilación: preparar el código para ejecutarlo</td></tr>
+<tr><td>runtime</td><td>Entorno de ejecución: dónde corre el código ya construido</td></tr>
+<tr><td>environment variable</td><td>Variable de entorno: dato que sale del código</td></tr>
+<tr><td>logs</td><td>Registros: la salida del sistema mientras corre</td></tr>
+<tr><td>CI/CD</td><td>Integración y entrega continua</td></tr>
+<tr><td>production</td><td>Producción: el entorno real, con usuarios reales</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://render.com/docs" target="_blank" rel="noopener">Documentación de Render</a> — despliegue continuo desde GitHub, con plan gratuito.</li>
+<li><a href="https://docs.railway.com" target="_blank" rel="noopener">Documentación de Railway</a> — sencillo de configurar, con créditos iniciales.</li>
+<li><a href="https://vercel.com/docs" target="_blank" rel="noopener">Documentación de Vercel</a> — pensado sobre todo para front-end y funciones sin servidor.</li>
+<li><a href="https://help.pythonanywhere.com" target="_blank" rel="noopener">PythonAnywhere · ayuda</a> — la opción más amigable si tu proyecto es Django.</li>
+</ul>
+
+<div class="nota">
+<h3>El error del 90% la primera vez</h3>
+<p>Casi siempre es el mismo: el sistema funciona perfecto en <code>localhost</code> y en el servidor da error de base de datos. La causa es que en tu computador la contraseña estaba en un archivo <code>.env</code> o en un código que escribiste rápido, y en el servidor esa variable no existe. Por eso el orden correcto es: <b>primero leer de una variable de entorno, después configurar esa variable en el panel</b>. Al revés no funciona.</p>
+<p>Lo segundo que falla: la base de datos. La de tu computador puede ser SQLite, que es un archivo. En producción casi siempre vas a necesitar PostgreSQL o MySQL, y a veces te cobran. Mira los límites del plan gratuito antes de comprometerte con el cliente.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tu sistema tiene una URL pública y funciona desde un celular que no es el tuyo.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Le enviaste esa URL a tu cliente, él la usó y te dio el visto bueno por escrito.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>No hay ninguna contraseña ni clave en el repositorio. Lo verificaste antes de publicarlo.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Sabes explicar dónde quedó guardada cada contraseña y cómo se cambia.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Cuando cambiaste un commit, el servidor se actualizó solo.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> la URL pública, el mensaje de aprobación del cliente, y una captura del panel del servicio donde se ven las variables de entorno configuradas.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo11/index.html">🔍 Siguiente: probar →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m10'); bindChecklist('m10'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m10'));</script>
+</body></html>

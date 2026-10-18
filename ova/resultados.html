@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏆 Tu recorrido</title>
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="index.html">🏠 Inicio</a>
+<hr>
+<a href="modulo0/index.html">🔧 M0 · Método</a>
+<a href="modulo1/index.html">🧠 M1 · Lógica y algoritmos</a>
+<a href="modulo2/index.html">💡 M2 · Programación base</a>
+<a href="modulo3/index.html">🌐 M3 · HTML y CSS</a>
+<a href="modulo4/index.html">⚡ M4 · JavaScript</a>
+<a href="modulo5/index.html">🌿 M5 · Git y GitHub</a>
+<a href="modulo6/index.html">🗄️ M6 · Bases de datos y SQL</a>
+<a href="modulo7/index.html">🔷 M7 · Programación a objetos</a>
+<a href="modulo8/index.html">📐 M8 · Requisitos y UML</a>
+<a href="modulo9/index.html">⚙️ M9 · Backend y API</a>
+<a href="modulo10/index.html">🚀 M10 · Publicar</a>
+<a href="modulo11/index.html">🔍 M11 · Probar</a>
+<a href="proyecto.html">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="atascos.html">🆘 Si te atascas</a>
+<a href="resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🏆 Tu recorrido</h1></header>
+<main>
+
+<div class="card">
+<h3>📈 Progreso general</h3>
+<p>Progreso: <span id="progreso-valor">0%</span></p>
+<progress id="progreso-barra" value="0" max="100" style="width:100%;height:18px;accent-color:#4361ee"></progress>
+<p id="progreso-cuenta" style="font-size:.9em;color:#666;margin-top:8px"></p>
+<p style="margin-top:14px"><a class="btn" id="btn-seguir" href="modulo0/index.html">Comenzar →</a></p>
+</div>
+
+<h2>Las 13 puertas</h2>
+<p>Una puerta se supera cuando puedes hacer algo verificable. No hay horas ni fechas: hay evidencia.</p>
+<table id="tabla-puertas">
+<tr><th>Puerta</th><th>Módulo</th><th>Estado</th></tr>
+</table>
+
+<h2>Insignias</h2>
+<p>No hay insignias automáticas. Se ganan con trabajo, y por eso valen.</p>
+<div class="card">
+<ul>
+<li><b>🧠 Descomponedor</b> — 10 problemas de lógica resueltos a mano.</li>
+<li><b>🌐Publicado</b> — un enlace funcionando, mandado a alguien.</li>
+<li><b>🎯 Con cliente</b> — alguien real con un problema real.</li>
+<li><b>⚡ Funcional</b> — el sistema responde y guarda datos.</li>
+<li><b>🌿 Bajo control</b> — 20 commits con mensajes que explican.</li>
+<li><b>🗄️ Con memoria</b> — los datos de tu cliente en una base real.</li>
+<li><b>📐 Con planos</b> — diagramas aprobados por el cliente.</li>
+<li><b>⚙️ Extremo a extremo</b> — interfaz, backend y base conectados.</li>
+<li><b>🚀 En producción</b> — una URL pública que usa tu cliente.</li>
+<li><b>🔍 Probado</b> — casos de prueba y defectos documentados.</li>
+<li><b>🏆 Entregado</b> — sistema, repositorio, documentación y párrafo honesto.</li>
+</ul>
+</div>
+
+<h2>Tu proyecto</h2>
+<div id="resumen-proyecto" class="card">
+<p>Todavía no has registrado el proyecto. Está en <a href="proyecto.html">M12</a>.</p>
+</div>
+
+<h2>Tus datos</h2>
+<div class="card">
+<p>Todo se guarda en <b>este navegador</b>, en este computador. No hay registro, no hay servidor, no se envía nada.</p>
+<p>Eso significa que funciona sin internet — y también que, si borras los datos del navegador o cambias de equipo, <b>pierdes el registro</b>.</p>
+<button class="btn" id="btn-exportar">📋 Copiar mi progreso</button>
+<button class="btn btn-desmarcar" id="btn-reset">🗑️ Borrar todo y empezar de cero</button>
+</div>
+
+<div class="nota">
+<p><b>Lo que este registro NO es.</b> No es un certificado. No lo emite ninguna institución, y no tiene valor académico ni laboral. Es un cuaderno de avance.</p>
+<p>Si necesitas un título, este curso no lo da. Lo que sí da es un sistema funcionando y un repositorio, que es lo que en una entrevista se puede demostrar.</p>
+</div>
+
+<h2>Adónde ir después</h2>
+<ul>
+<li><b>Un framework</b> — React, Vue, Django, Spring. Uno solo, cuando ya domines JavaScript.</li>
+<li><b>Pruebas automatizadas</b> — lo primero que te va a pedir un trabajo.</li>
+<li><b>Seguridad web</b> — autenticación real, manejo de sesiones, inyección SQL. Casi ningún curso gratuito lo enseña con profundidad.</li>
+<li><b>Accesibilidad</b> — auditoría con herramientas y pruebas con lectores de pantalla.</li>
+<li><b>Un segundo proyecto</b> — el primero se hace para aprender. El segundo, para cobrar.</li>
+</ul>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/progress.js"></script>
+<script>
+const ETIQUETAS = {
+  m0:'M0 · Método', m1:'M1 · Lógica y algoritmos', m2:'M2 · Programación base',
+  m3:'M3 · HTML y CSS', m4:'M4 · JavaScript', m5:'M5 · Git y GitHub',
+  m6:'M6 · Bases de datos y SQL', m7:'M7 · Programación a objetos',
+  m8:'M8 · Requisitos y UML', m9:'M9 · Backend y API',
+  m10:'M10 · Publicar', m11:'M11 · Probar', proyecto:'M12 · Proyecto real'
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const t = document.getElementById('tabla-puertas');
+  const p = getProgress().puertas || {};
+  PUERTAS.forEach((id, i) => {
+    const fecha = p[id] ? new Date(p[id]).toLocaleDateString('es-CO') : '';
+    t.insertAdjacentHTML('beforeend',
+      '<tr><td>' + (i+1) + '</td><td>' + ETIQUETAS[id] + '</td><td>' +
+      (p[id] ? '<span class="chip chip-ok">✓ ' + fecha + '</span>' : '<span class="chip chip-pend">Pendiente</span>') +
+      '</td></tr>');
+  });
+
+  const pr = getProject();
+  const campos = [['cliente','Cliente'],['problema','Problema'],['alcance','Alcance'],
+                  ['repo','Repositorio'],['url','URL pública'],['pendiente','Pendiente']];
+  const conDatos = campos.filter(([k]) => pr[k]);
+  if(conDatos.length){
+    document.getElementById('resumen-proyecto').innerHTML =
+      conDatos.map(([k,l]) => '<p><b>' + l + ':</b> ' + escapeHTML(pr[k]) + '</p>').join('');
+  }
+
+  document.getElementById('btn-exportar').addEventListener('click', () => {
+    const txt = exportJSON();
+    navigator.clipboard?.writeText(txt).then(
+      () => alert('Copiado. Guárdalo en un archivo por si borras los datos del navegador.'),
+      () => { console.log(txt); alert('Tu navegador no permitió copiar. El texto está en la consola.'); }
+    );
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    if(confirm('Esto borra TODAS las puertas superadas y los datos de tu proyecto. ¿Seguro?')){
+      resetProgress();
+      location.reload();
+    }
+  });
+});
+
+function escapeHTML(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+</script>
+</body></html>

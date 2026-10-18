@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🌿 M5 · Git y GitHub</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<aside class="sidebar">
+<h2>💻 Desarrollo de Software</h2>
+<a href="../index.html">🏠 Inicio</a>
+<hr>
+<a href="../modulo0/index.html" data-gate="m0">🔧 M0 · Método</a>
+<a href="../modulo1/index.html" data-gate="m1">🧠 M1 · Lógica y algoritmos</a>
+<a href="../modulo2/index.html" data-gate="m2">💡 M2 · Programación base</a>
+<a href="../modulo3/index.html" data-gate="m3">🌐 M3 · HTML y CSS</a>
+<a href="../modulo4/index.html" data-gate="m4">⚡ M4 · JavaScript</a>
+<a href="../modulo5/index.html" data-gate="m5">🌿 M5 · Git y GitHub</a>
+<a href="../modulo6/index.html" data-gate="m6">🗄️ M6 · Bases de datos y SQL</a>
+<a href="../modulo7/index.html" data-gate="m7">🔷 M7 · Programación a objetos</a>
+<a href="../modulo8/index.html" data-gate="m8">📐 M8 · Requisitos y UML</a>
+<a href="../modulo9/index.html" data-gate="m9">⚙️ M9 · Backend y API</a>
+<a href="../modulo10/index.html" data-gate="m10">🚀 M10 · Publicar</a>
+<a href="../modulo11/index.html" data-gate="m11">🔍 M11 · Probar</a>
+<a href="../proyecto.html" data-gate="proyecto">🎯 M12 · Proyecto real</a>
+<hr>
+<a href="../diagnostico.html">🩺 ¿Por dónde empiezo?</a>
+<a href="../atascos.html">🆘 Si te atascas</a>
+<a href="../resultados.html">🏆 Tu recorrido</a>
+</aside>
+<div class="main">
+<header><h1>🌿 M5 · Git y GitHub</h1></header>
+<main>
+
+<div class="intro">
+<p>Sales de este módulo sabiendo <b>guardar el progreso de tu proyecto</b>, volver a una versión anterior cuando algo sale mal, y compartir tu trabajo con el mundo para que otra persona lo pueda ver y auditar.</p>
+<p>Hasta aquí tu código vivía en una carpeta de tu computador. Si lo borrabas, se perdía. Si cambiabas algo y rompías todo, no había red. Ese es el problema que Git resuelve, y es un problema serio: <b>todo trabajo de software que no tiene historial es frágil</b>.</p>
+<p>GitHub no es otra cosa: es donde se guardan los repositorios para que tu cliente los pueda abrir con un enlace. El repositorio es de Git; GitHub es el sitio donde lo publicas.</p>
+</div>
+
+<h2>Qué vas a aprender</h2>
+<ul>
+<li><b>Repositorio</b>: la carpeta completa con su historial, marcada con <code>.git</code>. No es una copia, es una memoria.</li>
+<li><b>Commit</b>: una foto del estado del proyecto con un mensaje que dice qué cambió y por qué.</li>
+<li><b>Rama</b> (<i>branch</i>): una línea de trabajo paralela. Sirve para probar algo dudoso sin romper lo que ya funciona.</li>
+<li><b>Merge</b>: unir el trabajo de una rama con la principal.</li>
+<li><code>.gitignore</code>: la lista de lo que <b>no</b> entra al repositorio (contraseñas, <code>node_modules</code>, archivos giantos).</li>
+<li><b>Push</b> y <b>pull</b>: mandar tus commits al remoto y traer los de otros.</li>
+<li><b>Pull request</b>: pedir que revisen tu cambio antes de mezclarlo.</li>
+<li><b>Issue</b>: un ticket donde queda anotado un problema, una idea o una tarea pendiente.</li>
+</ul>
+
+<h3>El día a día</h3>
+<pre><code>git init                 # crear el repositorio en la carpeta
+git add .                # preparar los cambios
+git commit -m "Corrige el cálculo del total"
+git push                 # mandar los commits a GitHub</code></pre>
+
+<table>
+<tr><th>Comando</th><th>Qué hace en una frase</th></tr>
+<tr><td><code>git status</code></td><td>Me dice qué cambié y qué falta por subir</td></tr>
+<tr><td><code>git log --oneline</code></td><td>La lista de commits, cada uno con su mensaje</td></tr>
+<tr><td><code>git switch -c nueva-rama</code></td><td>Creo una rama para trabajar aislado</td></tr>
+<tr><td><code>git diff</code></td><td>Muéstrame línea por línea qué cambié</td></tr>
+</table>
+
+<div class="vocab">
+<h3>🌍 Vocabulario en inglés</h3>
+<table>
+<tr><th>Inglés</th><th>Español</th></tr>
+<tr><td>commit</td><td>Confirmación: instantánea del proyecto con su mensaje</td></tr>
+<tr><td>repository</td><td>Repositorio: carpeta con todo el historial del proyecto</td></tr>
+<tr><td>branch</td><td>Rama: línea de trabajo paralela</td></tr>
+<tr><td>merge</td><td>Fusionar: integrar una rama con otra</td></tr>
+<tr><td>push</td><td>Subir al remoto</td></tr>
+<tr><td>pull</td><td>Bajar los cambios del remoto a tu máquina</td></tr>
+<tr><td>pull request</td><td>Solicitud de fusión: pides revisión antes de integrar</td></tr>
+<tr><td>issue</td><td>Incidencia: problema o tarea anotada en el repositorio</td></tr>
+<tr><td>conflict</td><td>Conflicto: dos versiones del mismo archivo que Git no sabe unir</td></tr>
+<tr><td>rebase</td><td>Reapilar commits: otra forma de organizar el historial</td></tr>
+</table>
+</div>
+
+<h2>Recursos gratuitos</h2>
+<ul>
+<li><a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener">Pro Git (español)</a> — el libro oficial, completo y gratuito. El capítulo 2 y el 10 resuelven casi todo lo de este módulo.</li>
+<li><a href="https://skills.github.com" target="_blank" rel="noopener">GitHub Skills</a> — cursos interactivos y cortos dentro de GitHub, con práctica en un repositorio de prueba.</li>
+<li><a href="https://docs.github.com/es" target="_blank" rel="noopener">Documentación de GitHub en español</a> — la referencia para issues, pull requests y permisos.</li>
+<li><a href="https://learngitbranching.js.org/?locale=es_ES" target="_blank" rel="noopener">Learn Git Branching</a> — un visualizador interactivo de ramas y merges. Gratis, corre en el navegador.</li>
+</ul>
+
+<div class="nota">
+<h3>Lo que nadie te cuenta</h3>
+<p>El mensaje del commit importa más que el comando. Escribes el mensaje para alguien que va a leer tu código en seis meses, y ese alguien sospechosamente vas a ser tú. <code>git commit -m "cambié cosas"</code> no le sirve a nadie.</p>
+<p>Y el <code>.gitignore</code> se escribe <b>antes</b> del primer commit, no después. Lo que ya se subió queda en el historial para siempre, aunque lo borres del archivo.</p>
+</div>
+
+<div class="puerta">
+<h3>🚪 Tu puerta de salida</h3>
+<p>No avanzas hasta poder hacer esto:</p>
+<label class="criterio"><input type="checkbox" data-check><span>Tienes un repositorio <b>público</b> en GitHub con el proyecto del cliente y más de 20 commits.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Los mensajes de tus commits explican qué cambió y por qué, no solo qué archivo toqué.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Sabes volver a una versión anterior del proyecto y explicas cómo lo hiciste.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Puedes explicar la diferencia entre <code>commit</code> y <code>push</code> sin mirar apuntes.</span></label>
+<label class="criterio"><input type="checkbox" data-check><span>Abriste al menos un issue y otro personaje lo leyó y respondió.</span></label>
+<p style="margin-top:16px"><b>Evidencia:</b> el enlace público a tu repositorio, con historial visible, un issue abierto y un mensaje de respuesta de otra persona.</p>
+<p style="margin-top:10px"><span id="gate-estado"></span></p>
+<button class="btn" id="gate-btn">✓ Superé esta puerta</button>
+<div id="gate-siguiente"></div>
+</div>
+
+<p><a class="btn" href="../modulo6/index.html">🗄️ Siguiente: bases de datos y SQL →</a></p>
+
+</main>
+<footer>OVA educativo — Carlos Ceballos · 2026</footer>
+</div>
+<script src="../js/storage.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/gate.js"></script>
+<script>renderGate('m5'); bindChecklist('m5'); document.getElementById('gate-btn').addEventListener('click',()=>toggleGate('m5'));</script>
+</body></html>
